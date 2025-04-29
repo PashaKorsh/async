@@ -24,13 +24,11 @@ async function run() {
 run();
 
 function sendRequest(url) {
-    return new Promise((resolve, reject) => {
-        fetch(url).then(res => {
-            if (res.ok) {
-                resolve(res.json());
-            }
-        })
-    });
+    return fetch(url).then(res => {
+        if (res.ok) {
+            return res.json(    );
+        }
+    })
 }
 
 function reqsToMap(requisites) {
